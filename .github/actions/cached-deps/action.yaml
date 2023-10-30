@@ -1,10 +1,8 @@
-name: 'GetCodeAndCacheDeps'
-description: 'Get code and cache dependencies'
+name: GetAndCacheDeps
+description: Get and cache dependencies
 runs:
   using: 'composite'
   steps:
-    - name: Get code
-      uses: actions/checkout@v3
     - name: Cache dependencies
       id: cache
       uses: actions/cache@v3

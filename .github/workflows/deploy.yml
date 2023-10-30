@@ -7,7 +7,9 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Get code & cache dependencies
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Get & cache dependencies
         uses: ./.github/actions/cached-deps
       - name: Lint code
         run: npm run lint
