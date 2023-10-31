@@ -9,7 +9,10 @@ function run()  {
     const region = core.getInput('s3-region', { required: true});
     const folder = core.getInput('s3-folder', { required: true});
 
-    exec.exec(`aws s3 sync ${folder} s3://${bucket} --region ${region}`)
+    const websiteURL = `http://${bucket}.s3-website-${region}.amazonaws.com/`;
+    core.setOutput('website-url', websiteURL);
+
+
 };
 
 run();
