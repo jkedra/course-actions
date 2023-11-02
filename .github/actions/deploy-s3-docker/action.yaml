@@ -1,0 +1,19 @@
+name: Deploy to AWS s3-folder
+description: Deploy a static websitevia AWS s3-folder
+runs:
+  using: docker
+  image: Dockerfile
+inputs:
+  s3-name:
+    description: S3 bucket name
+    required: true
+  s3-region:
+    description: S3 bucket s3-region
+    required: false
+    default: eu-west-1
+  s3-folder:
+    description: S3 folder containing deployable files
+    required: true
+outputs:
+  website-url:
+    description: URL of deployed website
