@@ -1,9 +1,5 @@
 FROM python:3
 
-COPY requirements.txt /requirements.txt
+RUN pip install --no-cache-dir -r .github/actions/deploy-s3-docker/requirements.txt
 
-RUN pip install -r requirements.txt
-
-COPY deployment.py /deployment.py
-
-CMD ["python", "/deployment.py"]
+CMD ["python", ".github/actions/deploy-s3-docker/deployment.py"]

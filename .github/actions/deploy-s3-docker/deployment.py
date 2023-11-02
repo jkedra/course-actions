@@ -13,6 +13,7 @@ def run():
 
     s3_client = boto3.client('s3', config=configuration)
 
+    os.chdir(os.environ(['GITHUB_WORKSPACE']))
     for root, subdirs, files in os.walk(dist_folder):
         for file in files:
             s3_client.upload_file(
