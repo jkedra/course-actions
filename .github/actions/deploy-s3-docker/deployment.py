@@ -5,8 +5,8 @@ from botocore.config import Config
 
 
 def run():
-    bucket = os.environ['INPUT_S3']
-    bucket_region = os.environ['INPUT_S3-NAME']
+    bucket = os.environ['INPUT_S3-NAME']
+    bucket_region = os.environ['INPUT_S3-REGION']
     dist_folder = os.environ['INPUT_S3_FOLDER']
 
     configuration = Config(region_name=bucket_region)
